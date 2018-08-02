@@ -8,6 +8,9 @@ c.commands += '\n"Бот, наруто" -- отправляет случайны
 commandAnime = ['Бот, аниме', 'бот, аниме', 'бот,аниме', 'Бот,аниме', 'бот аниме']
 c.commands += '\n"Бот, аниме" -- отправляет случайный аниме-арт.'
 
+commandHentai = ['Бот, хентай', 'бот, хентай', 'бот,хентай', 'Бот,хентай', 'бот хентай']
+c.commands += '\n"Бот, хентай" -- отправляет случайный хентай-арт.'
+
 def naruto():
 	status.messagesSend += 1
 	pic = vk_session.method('photos.get', {'owner_id':-34269876, 'album_id':239149054, 'offset':randint(1, 405), 'count':1})
@@ -29,5 +32,15 @@ def anime():
 	else:
 		vk_session.method('messages.send', {'user_id':event.user_id, 'attachment':attachment})
 		print('{}[Anime, to user {}]'.format(f.dat, event.user_id))
+
+def hentai():
+	status.messagesSend += 1
+	if event.from_chat:
+		vk_session.method('messages.send', {'chat_id':event.chat_id, 'attachment':'photo-150438165_456239046'})
+		print('{}[Anime, to chat {} (user {})]'.format(f.dat, event.chat_id, event.user_id))
+	else:
+		vk_session.method('messages.send', {'user_id':event.user_id, 'attachment':'photo-150438165_456239046'})
+		print('{}[Anime, to user {}]'.format(f.dat, event.user_id))
+
 
 
