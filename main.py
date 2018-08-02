@@ -57,6 +57,10 @@ def main():
 					anime.event = event
 					anime.anime()
 
+				if event.text in anime.commandHentai:
+					anime.event = event
+					anime.hentai()
+
 			except Exception as error_msg:
 				f.date()
 				print('{}[Ошибка отправки сообщения!][{}]'.format(f.dat, error_msg))
