@@ -2,6 +2,7 @@ from datetime import timedelta
 from modules import f, commands as c
 import time
 from memory_profiler import memory_usage
+import options as o
 
 command = ['/status', 'Бот, статус']
 messagesSend = 0
