@@ -1,6 +1,6 @@
 import vk_api
 from modules import f, status, commands as c
-from modules import bash, kill, admin, anime, who
+from modules import bash, kill, admin, anime, who, chance
 from vk_api.longpoll import VkLongPoll, VkEventType
 import options as o
 
@@ -65,6 +65,10 @@ def main():
 				if event.text[:9] in who.command:
 					who.event = event
 					who.who()
+
+				if event.text[:10] in chance.command:
+					chance.event = event
+					chance.chance()
 
 			except Exception as error_msg:
 				f.date()
