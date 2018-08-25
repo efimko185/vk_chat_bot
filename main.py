@@ -1,6 +1,6 @@
 import vk_api
 from modules import f, status, commands as c
-from modules import bash, kill, admin, anime
+from modules import bash, kill, admin, anime, who
 from vk_api.longpoll import VkLongPoll, VkEventType
 import options as o
 
@@ -20,6 +20,7 @@ def main():
 	f.vk_session = vk_session
 	admin.vk_session = vk_session
 	anime.vk_session = vk_session
+	who.vk_session = vk_session
 
 	longpoll = VkLongPoll(vk_session)#подключаем лонгпулл
 
@@ -60,6 +61,10 @@ def main():
 				if event.text in anime.commandHentai:
 					anime.event = event
 					anime.hentai()
+
+				if event.text[:9] in who.command:
+					who.event = event
+					who.who()
 
 			except Exception as error_msg:
 				f.date()
