@@ -7,7 +7,7 @@ c.commands += '\n"Бот, инфа <определение>" -- определя
 def chance():
 	status.messagesSend += 1	
 	chan = event.text[10:]
-	chanc = ('Вероятность, что '+ chan + 'составляет ' + str(random.randint(0, 100)) + '%')
+	chanc = ('Вероятность, что '+ chan + ' составляет ' + str(random.randint(0, 100)) + '%')
 	if event.from_chat:
 		f.write_msg_chat(event.chat_id, chanc)
 		f.date()   
