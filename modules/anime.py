@@ -37,10 +37,10 @@ def hentai():
 	status.messagesSend += 1
 	if event.from_chat:
 		vk_session.method('messages.send', {'chat_id':event.chat_id, 'attachment':'photo-150438165_456239046'})
-		print('{}[Anime, to chat {} (user {})]'.format(f.dat, event.chat_id, event.user_id))
+		print('{}[Hentai, to chat {} (user {})]'.format(f.dat, event.chat_id, event.user_id))
 	else:
 		vk_session.method('messages.send', {'user_id':event.user_id, 'attachment':'photo-150438165_456239046'})
-		print('{}[Anime, to user {}]'.format(f.dat, event.user_id))
+		print('{}[Hentai, to user {}]'.format(f.dat, event.user_id))
 
 
 
